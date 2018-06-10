@@ -1,0 +1,42 @@
+"use strict";
+
+var exposureC = function() {
+    LocalContractStorage.defineMapProperty(this, "JSONMap");
+    LocalContractStorage.defineProperty(this, "index");
+};
+
+exposureC.prototype = {
+    init: function() {
+        this.index = 0;
+    },
+
+    writeinfo: function(strTitle, strNote) {
+        var strTitle = strTitle.trim();
+        var strNote = strNote.trim();
+
+        var myJSON = new Object();
+        myJSON.index = this.index;
+        myJSON.strTitle = strTitle;
+        myJSON.strNote = strNote;
+        myJSON.author = Blockchain.transaction.from;
+        myJSON.createDate = Blockchain.transaction.timestamp;
+
+        this.JSONMap.set(this.index, JSON.stringify(myJSON));
+        this.index += 1;
+    },
+
+    readinfo: function() {
+        var myArr = [];
+        for (var i = 0; i < this.index; i++) {
+            var obj = JSON.parse(this.JSONMap.get(i));
+            myArr.push(obj);
+        }
+        return myArr;
+    }
+};
+
+module.exports = exposureC;
+
+
+n1zBgWRjs4tmZcBPU9F3XVtBayeM6R8ftai
+4674f53857b40bc6d6328bafa57f48713e951f14337aad7e4b4036c48f663db3

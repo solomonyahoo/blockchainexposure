@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>区块链曝光墙</title> 
+  <link rel="stylesheet" href="./css/bootstrap.min.css" /> 
+  <script src="./js/jquery.min.js"></script> 
+  <script src="./js/bootstrap.min.js"></script> 
+  <script src="./js/bootstrap-datepicker.js"></script> 
+  <script src="./js/nebPay.js"></script> 
+  <script src="./js/list.js"></script> 
+ </head> 
+ <body onload="loadlist();" style="background:url('./img/bg.jpg');background-size: cover;background-position: center center;"> 
+  <div class="container"> 
+   <div class="row clearfix"> 
+    <div class="col-md-12 column"> 
+     <div> 
+<h1 align="center"><font style="color:yellow"><b>区块链曝光墙</b></font></h1> 
+     </div> 
+     <div class="row clearfix"> 
+      <div class="col-md-12 column"> 
+       <div class="panel panel-default"> 
+        <div class="panel-heading"> 
+         <a id="modal-30368" href="#modal-container-30368" role="button" class="btn btn-default" data-toggle="modal">我要爆光</a> 发布内容采用星云链去中心化永久存储，不怕删帖
+		  <br>
+		 1. 请使用google浏览器。
+		 <br>
+		 2. 安装星云链Web插件钱包。<a target="_blank" href="https://github.com/ChengOrangeJu/WebExtensionWallet">NAS WebExtensionWallet</a>
+		 <br>
+		 <div class="modal fade" id="modal-container-30368" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"> 
+          <div class="modal-dialog"> 
+           <div class="modal-content"> 
+            <div class="modal-header"> 
+             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> 
+             <h4 class="modal-title" id="myModalLabel"> 输入你要发表的内容 </h4> 
+            </div> 
+            <div class="modal-body"> 
+             <form role="form"> 
+              <div class="form-group"> 
+               <label for="strTitle">主题</label>
+               <input type="text" class="form-control" id="strTitle"/> 
+              </div> 
+              <div class="form-group"> 
+               <label for="strNote">内容</label> 
+               <textarea class="form-control" rows="10" id="strNote"></textarea> 
+              </div> 
+             </form> 
+            </div> 
+            <div class="modal-footer"> 
+             <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button> 
+             <button type="button" class="btn btn-primary" onclick="writeinfo();">保存</button> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div>
+		</div>
+		
+		 <div class="panel panel-default">
+                  <div class="form-control">
+          <input name="text"  type="text" id="search_value" size="80">
+          <button id=search onclick="loadSearch();">搜索</button>
+        </div>
+        </div>
+		
+		<div class="panel panel-default"> 
+		       
+		<div class="panel-heading"> 
+		黑幕列表：
+		</div>
+        <div id="indexlist">		
+
+		</div>
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+
+  </div>  
+ </body>
+</html>
